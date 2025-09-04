@@ -40,7 +40,12 @@ const CourseCard = ({ course, attendance, nextClass, upcomingAssignments, classN
           </p>
           <div className="flex items-center gap-1 text-sm text-gray-600">
             <ApperIcon name="Clock" className="w-4 h-4" />
-            {course.schedule.join(", ")}
+{Array.isArray(course.schedule) 
+              ? course.schedule.join(", ")
+              : course.schedule 
+                ? String(course.schedule)
+                : "No schedule available"
+            }
           </div>
         </div>
         <ProgressRing 
