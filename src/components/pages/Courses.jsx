@@ -131,24 +131,24 @@ const Courses = () => {
   };
 
   return (
-    <div className="space-y-8">
+<div className="space-y-8">
       {/* Header */}
       <div className="bg-gradient-to-r from-secondary-600 via-primary-600 to-accent-500 rounded-2xl p-8 text-white">
         <div className="flex flex-col md:flex-row md:items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold mb-2 font-display">My Courses</h1>
+            <h1 className="text-3xl font-bold mb-2 font-display">Course Management</h1>
             <p className="text-secondary-100 text-lg">
-              Manage your enrolled courses for Fall 2024 semester
+              Manage your teaching courses and student enrollments for Fall 2024
             </p>
           </div>
           <div className="flex items-center gap-4 mt-4 md:mt-0">
             <div className="text-center">
               <div className="text-2xl font-bold">{enrolledCount}</div>
-              <div className="text-sm text-secondary-100">Enrolled</div>
+              <div className="text-sm text-secondary-100">Teaching</div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold">{waitlistedCount}</div>
-              <div className="text-sm text-secondary-100">Waitlisted</div>
+              <div className="text-sm text-secondary-100">Preparing</div>
             </div>
           </div>
         </div>
@@ -188,9 +188,9 @@ const Courses = () => {
               <option value="credits">Sort by Credits</option>
             </select>
             
-            <Button variant="primary" size="small">
+<Button variant="primary" size="small">
               <ApperIcon name="Plus" className="w-4 h-4 mr-2" />
-              Add Course
+              Create New Course
             </Button>
           </div>
         </div>

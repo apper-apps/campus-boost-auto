@@ -106,7 +106,7 @@ export const gradeService = {
     return null;
   },
 
-  async delete(id) {
+async delete(id) {
     await delay();
     const index = grades.findIndex(g => g.Id === parseInt(id));
     if (index !== -1) {
@@ -114,5 +114,43 @@ export const gradeService = {
       return { ...deleted };
     }
     return null;
+  },
+
+  async postGrade(gradeData) {
+    await delay();
+    const newGrade = {
+      Id: Math.max(...grades.map(g => g.Id), 0) + 1,
+      ...gradeData,
+      gradedDate: new Date().toISOString()
+    };
+    grades.push(newGrade);
+    return { ...newGrade };
+  },
+
+  async updateGrade(id, gradeData) {
+    await delay();
+    const index = grades.findIndex(g => g.Id === parseInt(id));
+    if (index !== -1) {
+      grades[index] = { ...grades[index], ...gradeData };
+      return { ...grades[index] };
+    }
+    return null;
+  },
+
+  async deleteGrade(id) {
+    await delay();
+    const index = grades.findIndex(g => g.Id === parseInt(id));
+    if (index !== -1) {
+      const deleted = grades.splice(index, 1)[0];
+      return { ...deleted };
+    }
+    return null;
+  },
+
+  async getStudentGrades(studentId, courseId) {
+    await delay();
+    return grades
+      .filter(grade => courseId ? grade.courseId === parseInt(courseId) : true)
+      .map(grade => ({ ...grade }));
   }
 };

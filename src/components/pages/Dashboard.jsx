@@ -81,64 +81,64 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="space-y-8">
+<div className="space-y-8">
       {/* Header */}
       <div className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-500 rounded-2xl p-8 text-white">
         <div className="max-w-4xl">
           <h1 className="text-3xl font-bold mb-2 font-display">
-            Welcome back, Alex! 👋
+            Welcome back, Dr. Chen! 👋
           </h1>
           <p className="text-primary-100 text-lg">
-            Here's what's happening with your courses today.
+            Here's what's happening with your courses and students today.
           </p>
         </div>
       </div>
 
-      {/* Stats Overview */}
+{/* Stats Overview */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <StatCard
-          title="Overall GPA"
-          value={gpa.toFixed(2)}
-          change="+0.1 from last semester"
+          title="Total Students"
+          value="128"
+          change="+12 from last semester"
           changeType="positive"
-          icon="Award"
+          icon="Users"
           color="primary"
         />
         <StatCard
-          title="Courses Enrolled"
+          title="Courses Teaching"
           value={courses.length}
           icon="BookOpen"
           color="secondary"
         />
         <StatCard
-          title="Pending Assignments"
+          title="Pending Grades"
           value={assignments.length}
-          change={assignments.length > 5 ? "High workload" : "Manageable"}
+          change={assignments.length > 5 ? "Review needed" : "Up to date"}
           changeType={assignments.length > 5 ? "negative" : "positive"}
           icon="CheckSquare"
           color="accent"
         />
         <StatCard
-          title="Attendance Rate"
-          value={`${getOverallAttendance()}%`}
-          change={getOverallAttendance() >= 80 ? "Good standing" : "Needs improvement"}
-          changeType={getOverallAttendance() >= 80 ? "positive" : "negative"}
-          icon="Calendar"
-          color={getOverallAttendance() >= 80 ? "success" : "warning"}
+          title="Class Average"
+          value={`${gpa.toFixed(1)}`}
+          change={gpa >= 3.5 ? "Excellent" : gpa >= 3.0 ? "Good" : "Needs attention"}
+          changeType={gpa >= 3.5 ? "positive" : gpa >= 3.0 ? "neutral" : "negative"}
+          icon="Award"
+          color={gpa >= 3.5 ? "success" : gpa >= 3.0 ? "primary" : "warning"}
         />
       </div>
 
       {/* My Courses */}
-      <div>
+<div>
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold text-gray-900 font-display">My Courses</h2>
+          <h2 className="text-2xl font-bold text-gray-900 font-display">Teaching Courses</h2>
           <p className="text-gray-600">Fall 2024 Semester</p>
         </div>
         
         {courses.length === 0 ? (
           <Empty 
-            title="No courses enrolled"
-            message="You haven't enrolled in any courses for this semester yet."
+            title="No courses assigned"
+            message="You haven't been assigned any courses to teach this semester yet."
             icon="BookOpen"
           />
         ) : (
@@ -157,18 +157,18 @@ const Dashboard = () => {
       </div>
 
       {/* Recent Announcements */}
-      <div>
+<div>
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold text-gray-900 font-display">Recent Announcements</h2>
+          <h2 className="text-2xl font-bold text-gray-900 font-display">Faculty Announcements</h2>
           <button className="text-primary-600 hover:text-primary-700 font-medium transition-colors duration-200">
-            View All
+            Create New
           </button>
         </div>
         
         {announcements.length === 0 ? (
           <Empty 
             title="No announcements"
-            message="There are no recent announcements to display."
+            message="Create announcements to communicate with your students."
             icon="Bell"
           />
         ) : (

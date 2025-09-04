@@ -58,9 +58,9 @@ const Header = ({ onMenuClick, onSearch }) => {
               <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center">
                 <ApperIcon name="User" className="w-4 h-4 text-white" />
               </div>
-              <div className="hidden sm:block text-right">
-                <p className="text-sm font-medium text-gray-900">Alex Johnson</p>
-                <p className="text-xs text-gray-500">Student ID: CS2024001</p>
+<div className="hidden sm:block text-right">
+                <p className="text-sm font-medium text-gray-900">Dr. Sarah Chen</p>
+                <p className="text-xs text-gray-500">Faculty ID: FC2024001</p>
               </div>
             </div>
           </div>

@@ -8,7 +8,7 @@ import Courses from "@/components/pages/Courses";
 import Attendance from "@/components/pages/Attendance";
 import Grades from "@/components/pages/Grades";
 import Announcements from "@/components/pages/Announcements";
-
+import FacultyDashboard from "@/components/pages/FacultyDashboard";
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -40,10 +40,11 @@ function App() {
               <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 <Routes>
                   <Route path="/" element={<Dashboard />} />
-                  <Route path="/courses" element={<Courses />} />
+<Route path="/courses" element={<Courses />} />
                   <Route path="/attendance" element={<Attendance />} />
                   <Route path="/grades" element={<Grades />} />
                   <Route path="/announcements" element={<Announcements />} />
+                  <Route path="/faculty-dashboard" element={<FacultyDashboard />} />
                 </Routes>
               </div>
             </main>

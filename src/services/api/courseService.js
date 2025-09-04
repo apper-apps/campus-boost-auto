@@ -55,10 +55,37 @@ export const courseService = {
     return null;
   },
 
-  async getEnrolledCourses() {
+async getEnrolledCourses() {
     await delay();
     return courses
       .filter(course => course.enrollmentStatus === "enrolled")
       .map(course => ({ ...course }));
+  },
+
+  async getByInstructor(instructorId) {
+    await delay();
+    return courses
+      .filter(course => course.professor.includes("Dr. Sarah Chen"))
+      .map(course => ({ ...course }));
+  },
+
+  async updateCourse(id, courseData) {
+    await delay();
+    const index = courses.findIndex(c => c.Id === parseInt(id));
+    if (index !== -1) {
+      courses[index] = { ...courses[index], ...courseData };
+      return { ...courses[index] };
+    }
+    return null;
+  },
+
+  async deleteCourse(id) {
+    await delay();
+    const index = courses.findIndex(c => c.Id === parseInt(id));
+    if (index !== -1) {
+      const deleted = courses.splice(index, 1)[0];
+      return { ...deleted };
+    }
+    return null;
   }
 };

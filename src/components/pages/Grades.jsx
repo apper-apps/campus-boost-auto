@@ -130,20 +130,20 @@ const Grades = () => {
     : 0;
 
   return (
-    <div className="space-y-8">
+<div className="space-y-8">
       {/* Header */}
       <div className="bg-gradient-to-r from-accent-500 via-primary-600 to-secondary-600 rounded-2xl p-8 text-white">
         <div className="flex flex-col md:flex-row md:items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold mb-2 font-display">Academic Performance</h1>
+            <h1 className="text-3xl font-bold mb-2 font-display">Grade Management</h1>
             <p className="text-accent-100 text-lg">
-              Track your grades and monitor academic progress
+              Post and manage student grades across all your courses
             </p>
           </div>
           <div className="mt-4 md:mt-0 flex items-center gap-6">
             <div className="text-center">
               <div className="text-3xl font-bold">{gpa.toFixed(2)}</div>
-              <div className="text-sm text-accent-100">Current GPA</div>
+              <div className="text-sm text-accent-100">Class Average</div>
             </div>
             <ProgressRing value={gpa * 25} size={80} strokeWidth={8} color="accent" />
           </div>
@@ -273,10 +273,10 @@ const Grades = () => {
             </div>
           )}
           
-          <div className="mt-6">
+<div className="mt-6">
             <Button variant="outline" size="small" className="w-full">
-              <ApperIcon name="Eye" className="w-4 h-4 mr-2" />
-              View All Grades
+              <ApperIcon name="Plus" className="w-4 h-4 mr-2" />
+              Post New Grade
             </Button>
           </div>
         </Card>

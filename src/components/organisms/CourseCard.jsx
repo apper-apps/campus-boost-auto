@@ -78,13 +78,13 @@ const CourseCard = ({ course, attendance, nextClass, upcomingAssignments, classN
         )}
       </div>
       
-      <div className="flex gap-2 mt-4">
+<div className="flex gap-2 mt-4">
         <Button variant="primary" size="small" className="flex-1">
-          <ApperIcon name="Eye" className="w-4 h-4 mr-1" />
-          View Details
+          <ApperIcon name="Settings" className="w-4 h-4 mr-1" />
+          Manage Course
         </Button>
         <Button variant="outline" size="small">
-          <ApperIcon name="MessageCircle" className="w-4 h-4" />
+          <ApperIcon name="GraduationCap" className="w-4 h-4" />
         </Button>
       </div>
     </div>
