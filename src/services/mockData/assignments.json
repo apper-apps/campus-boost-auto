@@ -1,0 +1,68 @@
+[
+  {
+    "Id": 1,
+    "courseId": 1,
+    "title": "Dynamic Programming Assignment",
+    "description": "Implement solutions for classic DP problems",
+    "dueDate": "2024-12-15T23:59:00",
+    "points": 100,
+    "submitted": false,
+    "type": "assignment",
+    "status": "pending"
+  },
+  {
+    "Id": 2,
+    "courseId": 1,
+    "title": "Graph Algorithms Quiz",
+    "description": "Quiz on BFS, DFS, and shortest path algorithms",
+    "dueDate": "2024-12-10T14:30:00",
+    "points": 50,
+    "submitted": true,
+    "type": "quiz",
+    "status": "submitted"
+  },
+  {
+    "Id": 3,
+    "courseId": 2,
+    "title": "Matrix Operations Project",
+    "description": "Implement matrix multiplication and eigenvalue calculations",
+    "dueDate": "2024-12-20T23:59:00",
+    "points": 150,
+    "submitted": false,
+    "type": "project",
+    "status": "pending"
+  },
+  {
+    "Id": 4,
+    "courseId": 3,
+    "title": "Research Paper Draft",
+    "description": "Submit first draft of technical research paper",
+    "dueDate": "2024-12-12T17:00:00",
+    "points": 75,
+    "submitted": false,
+    "type": "paper",
+    "status": "pending"
+  },
+  {
+    "Id": 5,
+    "courseId": 4,
+    "title": "Lab Report - Wave Motion",
+    "description": "Analysis of wave interference experiments",
+    "dueDate": "2024-12-08T23:59:00",
+    "points": 25,
+    "submitted": true,
+    "type": "lab",
+    "status": "graded"
+  },
+  {
+    "Id": 6,
+    "courseId": 5,
+    "title": "Historical Essay",
+    "description": "Essay on causes of World War I",
+    "dueDate": "2024-12-18T23:59:00",
+    "points": 100,
+    "submitted": false,
+    "type": "essay",
+    "status": "pending"
+  }
+]

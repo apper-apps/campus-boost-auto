@@ -1,0 +1,79 @@
+[
+  {
+    "Id": 1,
+    "courseId": 1,
+    "assignmentId": 2,
+    "assignmentName": "Graph Algorithms Quiz",
+    "score": 45,
+    "maxScore": 50,
+    "weight": 0.15,
+    "gradedDate": "2024-11-28T10:30:00",
+    "feedback": "Excellent understanding of algorithms"
+  },
+  {
+    "Id": 2,
+    "courseId": 2,
+    "assignmentId": null,
+    "assignmentName": "Midterm Exam",
+    "score": 85,
+    "maxScore": 100,
+    "weight": 0.30,
+    "gradedDate": "2024-11-15T14:00:00",
+    "feedback": "Strong performance on matrix operations"
+  },
+  {
+    "Id": 3,
+    "courseId": 3,
+    "assignmentId": null,
+    "assignmentName": "Presentation Skills",
+    "score": 88,
+    "maxScore": 100,
+    "weight": 0.20,
+    "gradedDate": "2024-11-20T16:30:00",
+    "feedback": "Clear and well-organized presentation"
+  },
+  {
+    "Id": 4,
+    "courseId": 4,
+    "assignmentId": 5,
+    "assignmentName": "Lab Report - Wave Motion",
+    "score": 23,
+    "maxScore": 25,
+    "weight": 0.10,
+    "gradedDate": "2024-12-01T09:15:00",
+    "feedback": "Good analysis and conclusions"
+  },
+  {
+    "Id": 5,
+    "courseId": 5,
+    "assignmentId": null,
+    "assignmentName": "Class Participation",
+    "score": 92,
+    "maxScore": 100,
+    "weight": 0.15,
+    "gradedDate": "2024-11-30T17:00:00",
+    "feedback": "Excellent engagement in discussions"
+  },
+  {
+    "Id": 6,
+    "courseId": 1,
+    "assignmentId": null,
+    "assignmentName": "Coding Assignment 1",
+    "score": 78,
+    "maxScore": 100,
+    "weight": 0.25,
+    "gradedDate": "2024-11-10T11:45:00",
+    "feedback": "Good solution but could optimize further"
+  },
+  {
+    "Id": 7,
+    "courseId": 2,
+    "assignmentId": null,
+    "assignmentName": "Homework Set 3",
+    "score": 90,
+    "maxScore": 100,
+    "weight": 0.20,
+    "gradedDate": "2024-11-25T13:20:00",
+    "feedback": "Excellent work on eigenvalue problems"
+  }
+]
