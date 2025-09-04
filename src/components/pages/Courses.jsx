@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from "react";
-import CourseCard from "@/components/organisms/CourseCard";
-import SearchBar from "@/components/molecules/SearchBar";
-import Button from "@/components/atoms/Button";
-import Badge from "@/components/atoms/Badge";
-import Loading from "@/components/ui/Loading";
-import Error from "@/components/ui/Error";
-import Empty from "@/components/ui/Empty";
-import ApperIcon from "@/components/ApperIcon";
+import React, { useEffect, useState } from "react";
+import CourseModal from "@/components/organisms/CourseModal";
 import { courseService } from "@/services/api/courseService";
 import { assignmentService } from "@/services/api/assignmentService";
 import { attendanceService } from "@/services/api/attendanceService";
-
+import ApperIcon from "@/components/ApperIcon";
+import CourseCard from "@/components/organisms/CourseCard";
+import SearchBar from "@/components/molecules/SearchBar";
+import Error from "@/components/ui/Error";
+import Empty from "@/components/ui/Empty";
+import Loading from "@/components/ui/Loading";
+import Badge from "@/components/atoms/Badge";
+import Button from "@/components/atoms/Button";
 const Courses = () => {
-  const [courses, setCourses] = useState([]);
+const [courses, setCourses] = useState([]);
   const [assignments, setAssignments] = useState([]);
   const [attendanceStats, setAttendanceStats] = useState([]);
   const [filteredCourses, setFilteredCourses] = useState([]);
@@ -21,7 +21,19 @@ const Courses = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedDepartment, setSelectedDepartment] = useState("");
   const [sortBy, setSortBy] = useState("name");
+  const [showModal, setShowModal] = useState(false);
 
+  const handleCreateCourse = () => {
+    setShowModal(true);
+  };
+
+  const handleModalClose = () => {
+    setShowModal(false);
+  };
+
+  const handleCourseSuccess = () => {
+    loadData();
+  };
   const loadData = async () => {
     try {
       setLoading(true);
@@ -188,7 +200,7 @@ const Courses = () => {
               <option value="credits">Sort by Credits</option>
             </select>
             
-<Button variant="primary" size="small">
+<Button variant="primary" size="small" onClick={handleCreateCourse}>
               <ApperIcon name="Plus" className="w-4 h-4 mr-2" />
               Create New Course
             </Button>
@@ -275,8 +287,15 @@ const Courses = () => {
               </div>
             ))}
           </div>
-        )}
+)}
       </div>
+
+      <CourseModal
+        isOpen={showModal}
+        onClose={handleModalClose}
+        mode="create"
+        onSuccess={handleCourseSuccess}
+      />
     </div>
   );
 };
