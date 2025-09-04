@@ -1,10 +1,14 @@
-import React from "react";
-import Button from "@/components/atoms/Button";
-import SearchBar from "@/components/molecules/SearchBar";
+import React, { useContext } from "react";
+import { useSelector } from "react-redux";
+import { AuthContext } from "../../App";
 import ApperIcon from "@/components/ApperIcon";
+import SearchBar from "@/components/molecules/SearchBar";
 import Badge from "@/components/atoms/Badge";
+import Button from "@/components/atoms/Button";
 
 const Header = ({ onMenuClick, onSearch }) => {
+  const { logout } = useContext(AuthContext);
+  const { user } = useSelector((state) => state.user);
   const searchFilters = [
     { value: "courses", label: "Courses" },
     { value: "professors", label: "Professors" },
@@ -59,9 +63,17 @@ const Header = ({ onMenuClick, onSearch }) => {
                 <ApperIcon name="User" className="w-4 h-4 text-white" />
               </div>
 <div className="hidden sm:block text-right">
-                <p className="text-sm font-medium text-gray-900">Dr. Sarah Chen</p>
-                <p className="text-xs text-gray-500">Faculty ID: FC2024001</p>
+                <p className="text-sm font-medium text-gray-900">{user?.firstName} {user?.lastName}</p>
+                <p className="text-xs text-gray-500">{user?.emailAddress}</p>
               </div>
+              <Button 
+                variant="ghost" 
+                size="small"
+                onClick={logout}
+                className="ml-2"
+              >
+                <ApperIcon name="LogOut" className="w-4 h-4" />
+              </Button>
             </div>
           </div>
         </div>
