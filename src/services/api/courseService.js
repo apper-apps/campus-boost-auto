@@ -163,12 +163,12 @@ export const courseService = {
   async create(courseData) {
     try {
       const params = {
-        records: [{
-          Name: courseData.Name || courseData.code_c || "New Course",
-          code_c: courseData.code_c,
-          professor_c: courseData.professor_c || courseData.professor,
-          schedule_c: Array.isArray(courseData.schedule_c) ? courseData.schedule_c.join(", ") : courseData.schedule_c || "",
-          credits_c: courseData.credits_c || courseData.credits,
+records: [{
+          Name: courseData.Name || courseData.name || courseData.code || "New Course",
+          code_c: courseData.code_c || courseData.code,
+          professor_c: courseData.professor_c || courseData.professor || courseData.instructor,
+          schedule_c: courseData.schedule_c || (typeof courseData.schedule === 'object' ? JSON.stringify(courseData.schedule) : courseData.schedule) || "",
+          credits_c: parseInt(courseData.credits_c || courseData.credits),
           enrollment_status_c: courseData.enrollment_status_c || "enrolled",
           department_c: courseData.department_c || courseData.department,
           semester_c: courseData.semester_c || courseData.semester || "Spring 2024"

@@ -85,7 +85,7 @@ const CourseForm = ({ course = null, onSuccess, onCancel, mode = "create" }) => 
         totalStudents: course?.totalStudents || 30
       };
 
-      if (mode === "create") {
+if (mode === "create") {
         await courseService.create(courseData);
         toast.success("Course created successfully!");
       } else {
