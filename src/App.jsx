@@ -33,13 +33,16 @@ function App() {
   const isAuthenticated = userState?.isAuthenticated || false;
   
   // Initialize ApperUI once when the app loads
-  useEffect(() => {
+useEffect(() => {
     const { ApperClient, ApperUI } = window.ApperSDK;
     
     const client = new ApperClient({
       apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
       apperPublicKey: import.meta.env.VITE_APPER_PUBLIC_KEY
     });
+
+    // Make authenticated client globally available for services
+    window.authenticatedApperClient = client;
     
     ApperUI.setup(client, {
       target: '#authentication',

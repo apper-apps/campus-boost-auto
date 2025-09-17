@@ -1,12 +1,13 @@
 import { toast } from 'react-toastify';
 
-const { ApperClient } = window.ApperSDK;
+const getApperClient = () => {
+  return window.authenticatedApperClient || window.ApperSDK?.ApperClient;
+};
 
 export const courseService = {
-  apperClient: new ApperClient({
-    apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
-    apperPublicKey: import.meta.env.VITE_APPER_PUBLIC_KEY
-  }),
+  get apperClient() {
+    return getApperClient();
+  },
 
   async getAll() {
     try {
